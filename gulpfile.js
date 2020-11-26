@@ -3,7 +3,7 @@
 
 // REQUIRES // ------------------------------
 const argv = require('yargs').argv;
-const signale = require('signale');
+const signale = require('signale-logger');
 const gulp = require('gulp');
 const rsync = require('gulp-rsync');
 const autoprefixer = require('gulp-autoprefixer');
