@@ -1,0 +1,33 @@
+{
+  "name": "test-crisp-gha",
+  "version": "1.0.0",
+  "description": "Gulpfile proccess",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "signale": "^1.4.0",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "bower": "^1.8.8",
+    "del": "^2.0.2",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-preprocess": "^3.0.3",
+    "gulp-rsync": "^0.0.5",
+    "gulp-sourcemaps": "^2.6.5",
+    "imagemin-pngquant": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rudemex/test-crisp-gha.git"
+  },
+  "author": "@MexDelgado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rudemex/test-crisp-gha/issues"
+  },
+  "homepage": "https://github.com/rudemex/test-crisp-gha#readme"
+}

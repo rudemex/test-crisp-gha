@@ -22,11 +22,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "🚀 Deploy to FTP"
-        uses: bayssmekanique/action-simple-file-upload@v1
+      - name: "💾 Restore pacakges from cache"
+        uses: actions/cache@v2
         with:
-          user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          host: ${{ secrets.FTP_SERVER }}
-          src: "./"
-          dest: "/nfs/c12/h01/mnt/222943/domains/jenkins.tresdoce.com.ar/html"
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - name: "📦 Install pacakges"
+        run: |
+          npm install --unsafe-perm=true --allow-root
+      - name: "🗜 Optimize"
+        run: |
+          gulp optimized
+      - name: "🔨 Build"
+        run: npm run predeploy
+      - name: "🚀 Deploy"
+        run: |
+          ssh ${username}@${server}
+          gulp deploy --domain ${{ domain }} --sshusername ${{ username }} --sshserver ${{ server }} --requireenv No
+        env:
+          domain: ${{ secrets.FTP_DOMAIN }}
+          username: ${{ secrets.FTP_USERNAME}}
+          server: ${{ secrets.FTP_SERVER }}
