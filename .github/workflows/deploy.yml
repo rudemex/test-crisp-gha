@@ -22,13 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "🚀 Deploy"
-        run: |
-          git config --global user.name $user_name
-          git config --global user.email $user_email
-          git remote set-url origin https://${github_token}@github.com/${repository}
-        env:
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          github_token: ${{ secrets.GIT_ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
+      - name: "🚀 Deploy to FTP"
+        uses: sebastianpopp/ftp-action@releases/v2
+          with:
+            host: ${{ secrets.FTP_SERVER }}
+            user: ${{ secrets.FTP_USERNAME }}
+            password: ${{ secrets.FTP_PASSWORD }}
+            localDir: /nfs/c12/h01/mnt/222943/domains/${{ secrets.FTP_DOMAIN }}/html
