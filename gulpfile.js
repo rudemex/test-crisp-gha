@@ -16,7 +16,7 @@ const preprocess = require('gulp-preprocess');
 // -------------------------------------------
 
 // VARS // -----------------------------------
-const srcPath = 'src';
+const srcPath = '.';
 const ftp_domain = argv.domain;
 const ssh_username = argv.sshusername; //tresdoce.com.ar
 const ssh_server = argv.sshserver; //s222943.gridserver.com
