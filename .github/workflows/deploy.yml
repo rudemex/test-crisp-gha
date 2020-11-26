@@ -30,13 +30,10 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       - name: "📦 Install pacakges"
-        run: |
-          npm install --unsafe-perm=true --allow-root
+        run: npm install
       - name: "🗜 Optimize"
         run: |
           gulp optimized
-      - name: "🔨 Build"
-        run: npm run predeploy
       - name: "🚀 Deploy"
         run: |
           ssh ${username}@${server}
