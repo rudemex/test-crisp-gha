@@ -40,7 +40,7 @@ jobs:
       - name: "🚀 Deploy"
         run: |
           ssh ${username}@${server}
-          gulp deploy --domain ${{ domain }} --sshusername ${{ username }} --sshserver ${{ server }} --requireenv No
+          gulp deploy --domain ${domain} --sshusername ${username} --sshserver ${server} --requireenv No
         env:
           domain: ${{ secrets.FTP_DOMAIN }}
           username: ${{ secrets.FTP_USERNAME}}
