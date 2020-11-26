@@ -4,6 +4,7 @@
   "description": "Gulpfile proccess",
   "main": "gulpfile.js",
   "dependencies": {
+    "gulp-cli": "^2.3.0",
     "gulp": "^3.9.1",
     "signale-logger": "^1.5.0",
     "yargs": "^15.3.1"

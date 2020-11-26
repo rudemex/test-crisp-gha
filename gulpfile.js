@@ -16,7 +16,7 @@ const preprocess = require('gulp-preprocess');
 // -------------------------------------------
 
 // VARS // -----------------------------------
-const srcPath = '.';
+const srcPath = '';
 const ftp_domain = argv.domain;
 const ssh_username = argv.sshusername; //tresdoce.com.ar
 const ssh_server = argv.sshserver; //s222943.gridserver.com
@@ -30,16 +30,16 @@ if (require_env == "No"){
 
 // OPTIMIZE // ---------------------------------
 gulp.task('image-optim', () => {
-    return gulp.src(`${srcPath}/assets/images/**/*`)
+    return gulp.src(`${srcPath}assets/images/**/*`)
         .pipe(imagemin({
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest(`${srcPath}/assets/images`));
+        .pipe(gulp.dest(`${srcPath}assets/images`));
 });
 
 gulp.task('csso', () => {
-    return gulp.src(`${srcPath}/assets/css/*.css`)
+    return gulp.src(`${srcPath}assets/css/*.css`)
         .pipe(sourcemaps.init())
         .pipe(csso({
             restructure: true,
@@ -47,17 +47,17 @@ gulp.task('csso', () => {
             debug: false
         }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(`${srcPath}/assets/css`));
+        .pipe(gulp.dest(`${srcPath}assets/css`));
 });
 
 gulp.task('autoprefix', () => {
     //return gulp.src(`assets/css/app.css`)
-    return gulp.src(`${srcPath}/assets/css/*.css`)
+    return gulp.src(`${srcPath}assets/css/*.css`)
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest(`${srcPath}/assets/css`));
+        .pipe(gulp.dest(`${srcPath}assets/css`));
 });
 
 gulp.task('optimized', ['image-optim', 'csso', 'autoprefix']);
