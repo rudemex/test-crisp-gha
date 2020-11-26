@@ -24,8 +24,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: "🚀 Deploy to FTP"
         uses: sebastianpopp/ftp-action@releases/v2
-          with:
-            host: ${{ secrets.FTP_SERVER }}
-            user: ${{ secrets.FTP_USERNAME }}
-            password: ${{ secrets.FTP_PASSWORD }}
-            localDir: /nfs/c12/h01/mnt/222943/domains/${{ secrets.FTP_DOMAIN }}/html
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: /nfs/c12/h01/mnt/222943/domains/${{ secrets.FTP_DOMAIN }}/html
