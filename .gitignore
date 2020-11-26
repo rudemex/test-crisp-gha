@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+
+#IDES
+**/.idea/**
+.idea
+/.idea
+.vscode/**
+**/.vscode/**
+.vscode
+/.vscode
