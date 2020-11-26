@@ -28,4 +28,4 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: /nfs/c12/h01/mnt/222943/domains/${{ secrets.FTP_DOMAIN }}/html
+          localDir: "/nfs/c12/h01/mnt/222943/domains/jenkins.tresdoce.com.ar/html"
