@@ -70,10 +70,11 @@ gulp.task('rsync', () => {
     signale.debug("SSH USERNAME: ",ssh_username);
     signale.debug("SSH SERVER: ",ssh_server);
     signale.debug("EXCLUDE FILES:", excludesFiles.toString());
-    //return gulp.src(['./'])
-    return gulp.src([`./${srcPath}/`])
+    //return gulp.src([`./${srcPath}/`])
+    return gulp.src(['./'])
         .pipe(rsync({
-            root: `./${srcPath}/`,
+            //root: `./${srcPath}/`,
+            root: `./`,
             hostname: `${ssh_username}@${ssh_server}`,
             destination: `/nfs/c12/h01/mnt/222943/domains/${ftp_domain}/html`,
             incremental: true,
