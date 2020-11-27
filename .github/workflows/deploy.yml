@@ -31,12 +31,13 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       - name: "🥤 Install Gulp-CLI"
         run: |
-          npm install gifsicle
           npm i gulp-cli
       - name: "📦 Install pacakges"
-        run: npm install --unsafe-perm=true --allow-root
+        run: |
+          npm install --unsafe-perm=true --allow-root
       - name: "🗜 Optimize"
-        run: gulp optimized
+        run: |
+          gulp optimized
       - name: "🚀 Deploy"
         run: |
           ssh ${username}@${server}

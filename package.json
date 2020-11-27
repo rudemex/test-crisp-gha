@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gifsicle": "^5.1.0",
     "signale-logger": "^1.5.0",
     "yargs": "^15.3.1"
   },
