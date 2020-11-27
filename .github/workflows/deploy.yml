@@ -35,9 +35,6 @@ jobs:
       - name: "📦 Install pacakges"
         run: |
           npm install --unsafe-perm=true --allow-root
-      - name: "🗜 Optimize"
-        run: |
-          gulp optimized
       - name: "🚀 Deploy"
         run: |
           ssh ${username}@${server}
